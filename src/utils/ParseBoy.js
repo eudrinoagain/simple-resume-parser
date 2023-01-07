@@ -15,6 +15,7 @@ function ParseBoy() {}
  * @param cbGetResume
  */
 ParseBoy.prototype.parseFile = function(PreparedFile, cbGetResume) {
+  if (!PreparedFile) throw new Error("Invalid file");
   logger.trace("I'm working with \"" + PreparedFile.name + '" now');
   parser.parse(PreparedFile, cbGetResume);
 };
